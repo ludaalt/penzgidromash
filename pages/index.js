@@ -1,7 +1,6 @@
 import Head from 'next/head';
-import Header from "../components/Header";
 import Section from "../components/Section";
-import {pageDescription, firstSection, secondSection} from '../data/data';
+import { firstSection, secondSection} from '../data/data';
 
 const Home = () => {
   return (
@@ -15,7 +14,6 @@ const Home = () => {
         <link rel="preload" href="../fonts/Gilroy/Gilroy-Medium.ttf" as="font" crossOrigin="" />
       </Head>
 
-      <Header title="Компания" pageDescription={pageDescription} />
       <Section props={firstSection} />
       <Section props={secondSection} />
     </>

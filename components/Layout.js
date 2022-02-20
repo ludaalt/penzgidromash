@@ -1,10 +1,12 @@
-import HeaderNavigation from "./HeaderNavigation";
+// import HeaderNavigation from "./HeaderNavigation";
+import Header from './Header';
+import { pageDescription } from '../data/data';
 import styled from 'styled-components';
 
 const Layout = ({ children }) => {
     return (
         <Page>
-            <HeaderNavigation />
+            <Header pageDescription={pageDescription} />
             {children}
         </Page>
     )
