@@ -34,7 +34,7 @@ const secondSectionContent = <div className="second-section-content">
         <h3>Железнодорожный транспорт</h3>
         <p>На заводе имеется ж/д ветка, заходящая в производственное здание</p>
       </div>
-      <div className="image-container" id="idx"></div> 
+      <div className="image-container"></div> 
     </div>    
 
 export const firstSection = {
@@ -51,4 +51,14 @@ export const secondSection = {
     type: 'transport',
     title: 'Транспорт',
     sectionContent: secondSectionContent
+}
+
+export const CarouseData = {
+  auto: <ul>
+      <li>Собственная автотранспортная компания</li>
+      <li>Перевозка негабаритных и тяжеловесных грузов</li>
+      <li>Доставка в любую точку России</li>
+    </ul>,
+
+  railway: <p>На заводе имеется ж/д ветка, заходящая в производственное здание</p>
 }
