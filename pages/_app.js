@@ -10,5 +10,3 @@ const MyApp = ({ Component, pageProps }) => {
 };
 
 export default MyApp
-
-// корневой файл, который оборачивает все приложение

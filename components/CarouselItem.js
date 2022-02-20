@@ -1,17 +1,15 @@
 import styled from "styled-components";
-
 import { CarouseData } from '../data/data';
 
-const CarouselItem = ({ id, title, content=CarouseData }) => {
+const CarouselItem = (props) => {
     return (
         <CarouselItemContainer>
-            <ItemId>{`0${id}/02`}</ItemId>
-            
+            <ItemId>{`0${props.type}/02`}</ItemId>            
             <div>
-                <div className="image-container"></div> 
+                <CarouselItemImage type={props.type}></CarouselItemImage> 
                 <div>
-                    <ItemTitle>{title}</ItemTitle>
-                    {id == 1 ? CarouseData.auto : CarouseData.railway}
+                    <ItemTitle>{props.title}</ItemTitle>
+                    {props.type == 1 ? CarouseData.auto : CarouseData.railway}
                 </div>
             </div>
         </CarouselItemContainer>
@@ -19,17 +17,20 @@ const CarouselItem = ({ id, title, content=CarouseData }) => {
 }
 
 const CarouselItemContainer = styled.div`
-    border: 3px solid purple;
-    margin: 30px;
+    min-width: 500px;
+    margin: 30px; 
 
-    .image-container {
-        border: 5px solid black;
-        min-height: 260px;
-        background-image: ${props => props.id == 1 ? 'url(/pic2.png)' : 'url(/pic3.png)'};
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
+    @media (max-width: 320px) {
+        margin: 15px; 
     }
+`
+
+const CarouselItemImage = styled.div`
+    min-height: 160px;
+    background: ${props => `url(/pic${Number(props.type) + 1}.png)`};
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 `
 
 const ItemId = styled.p`
