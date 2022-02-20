@@ -6,35 +6,25 @@ import CarouselItem from './CarouselItem';
 const Section = ({ props }) => {
     return (
         <>
-        <SectionWrapper>
-            <SectionTitleWrapper>
-                <h2>{props.title}</h2>
-                {props.description && <p>{props.description}</p>}
-            </SectionTitleWrapper>
+            <SectionWrapper>
+                <SectionTitleWrapper>
+                    <h2>{props.title}</h2>
+                    {props.description && <p>{props.description}</p>}
+                </SectionTitleWrapper>
 
-            <SectionContentWrapper type={props.type}>
-                { props.sectionContent }                
-            </SectionContentWrapper>
-        </SectionWrapper>
+                <SectionContentWrapper type={props.type}>
+                    { props.sectionContent }                
+                </SectionContentWrapper>
+            </SectionWrapper>
 
-        <CarouselWrapper type={props.type}>
-            <Carousel show={1.5} slide={2} swiping={true} type={props.type}> 
-                <CarouselItem type="1" title="Автотранспорт" />
-                <CarouselItem type="2" title="Железнодорожный транспорт" />
+            <Carousel className="carousel" show={1.5} slide={2} swiping={true}> 
+                <CarouselItem id="1" title="Автотранспорт" />
+                <CarouselItem id="2" title="Железнодорожный транспорт" />
             </Carousel>
-        </CarouselWrapper>
-    </>
+        </>
     )
 }
 
-const CarouselWrapper = styled.div` 
-    display: ${props => props.type === 'about' ? "none" : "block"};
-
-    @media (min-width: 790px) {
-        display: none;
-    }
-    min-height: 400px;
-`
 
 const SectionWrapper = styled.div`
     margin-top: 135px;
@@ -97,6 +87,10 @@ const SectionContentWrapper = styled.div`
 
     .first-section-content {
         display: flex;
+
+        & ~ .carousel {
+            border: 3px solid red;
+        }
 
         @media (max-width: 1100px) {
             flex-direction: column;

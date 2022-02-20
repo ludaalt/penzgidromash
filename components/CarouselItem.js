@@ -4,12 +4,12 @@ import { CarouseData } from '../data/data';
 const CarouselItem = (props) => {
     return (
         <CarouselItemContainer>
-            <ItemId>{`0${props.type}/02`}</ItemId>            
+            <ItemId>{`0${props.id}/02`}</ItemId>            
             <div>
-                <CarouselItemImage type={props.type}></CarouselItemImage> 
+                <CarouselItemImage id={props.id}></CarouselItemImage> 
                 <div>
                     <ItemTitle>{props.title}</ItemTitle>
-                    {props.type == 1 ? CarouseData.auto : CarouseData.railway}
+                    {props.id == 1 ? CarouseData.auto : CarouseData.railway}
                 </div>
             </div>
         </CarouselItemContainer>
@@ -18,17 +18,26 @@ const CarouselItem = (props) => {
 
 const CarouselItemContainer = styled.div`
     min-width: 500px;
+    min-height: 400px;
     margin: 30px; 
 
     @media (max-width: 320px) {
         margin: 15px; 
     }
 
+    @media (min-width: 790px) {
+            display: none;
+    }
+
+    p {
+        max-width: 215px;
+    }
+
 `
 
 const CarouselItemImage = styled.div`
     min-height: 160px;
-    background: ${props => `url(/pic${Number(props.type) + 1}.png)`};
+    background: ${props => `url(/pic${Number(props.id) + 1}.png)`};
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -40,6 +49,7 @@ const ItemId = styled.p`
     font-size: 16px;
     line-height: 160%;
     color: #1C1C1C;
+
 `
 
 const ItemTitle = styled.h3`

@@ -43,3 +43,7 @@ ul {
   font-display: swap;
 }
 
+.carousel:not(:last-child) {
+  display: none;
+}
+
