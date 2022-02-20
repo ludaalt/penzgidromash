@@ -18,19 +18,21 @@ const CarouselItem = (props) => {
 
 const CarouselItemContainer = styled.div`
     min-width: 500px;
+    max-width: 50vw;
     min-height: 400px;
     margin: 30px; 
+    border: 3px solid red;
 
     @media (max-width: 320px) {
         margin: 15px; 
     }
 
-    @media (min-width: 790px) {
-            display: none;
+    @media (min-width: 790px) { 
+        display: none;
     }
 
     p {
-        max-width: 215px;
+        max-width: 80vw;
     }
 
 `
