@@ -18,7 +18,7 @@ const Section = ({ props }) => {
         </SectionWrapper>
 
         <CarouselWrapper type={props.type}>
-            <Carousel show={1.5} slide={1} swiping={true} type={props.type}> 
+            <Carousel show={1.5} slide={2} swiping={true} type={props.type}> 
                 <CarouselItem type="1" title="Автотранспорт" />
                 <CarouselItem type="2" title="Железнодорожный транспорт" />
             </Carousel>
@@ -26,6 +26,15 @@ const Section = ({ props }) => {
     </>
     )
 }
+
+const CarouselWrapper = styled.div` 
+    display: ${props => props.type === 'about' ? "none" : "block"};
+
+    @media (min-width: 790px) {
+        display: none;
+    }
+    min-height: 400px;
+`
 
 const SectionWrapper = styled.div`
     margin-top: 135px;
@@ -229,14 +238,6 @@ const SectionContentWrapper = styled.div`
         }
     }
     
-`
-
-const CarouselWrapper = styled.div` 
-    display: ${props => props.type === 'about' ? "none" : "block"};
-
-    @media (min-width: 790px) {
-        display: none;
-    }
 `
 
 export default Section;

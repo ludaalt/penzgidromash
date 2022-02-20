@@ -23,6 +23,7 @@ const CarouselItemContainer = styled.div`
     @media (max-width: 320px) {
         margin: 15px; 
     }
+
 `
 
 const CarouselItemImage = styled.div`
